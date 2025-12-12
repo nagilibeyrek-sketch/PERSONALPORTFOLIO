@@ -1,0 +1,183 @@
+/*
+ * SITE 1101 Personal Website Project
+ * CSS: styles.css
+ * Focus: Clean, modular, and responsive design.
+ */
+
+/* ================== 1. BASE STYLES & RESET ================== */
+:root {
+    --primary-color: #007bff; /* Blue for links/buttons */
+    --secondary-color: #6c757d; /* Grey for accents */
+    --background-color: #f8f9fa; /* Light grey background */
+    --text-color: #212529; /* Dark text */
+    --font-family: 'Arial', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    padding-top: 60px; /* Space for fixed navbar */
+}
+
+/* ================== 2. NAVIGATION BAR (MENU) ================== */
+.navbar {
+    position: fixed; /* Fixed position for navigation bar */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--text-color);
+    color: white;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.nav-brand {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 1em;
+    padding: 5px 10px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* ================== 3. MAIN CONTENT LAYOUT ================== */
+main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 5%;
+}
+
+h1, h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+/* ================== 4. HOME PAGE STYLES (#home) ================== */
+.profile-summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px 0;
+}
+
+.profile-photo {
+    /* beyrek_profilephoto.jpg is used here as per instructions */
+    width: 200px;
+    height: 200px;
+    border-radius: 50%; /* Make the image circular */
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 4px solid var(--primary-color);
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+/* ================== 5. ABOUT PAGE STYLES (#about) ================== */
+#about section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: white;
+    border-left: 5px solid var(--primary-color);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+#about ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#about li {
+    padding: 5px 0;
+}
+
+/* ================== 6. PROJECTS PAGE STYLES (#projects) ================== */
+.project-item {
+    background-color: white;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.project-image {
+    /* project1_circuit_2.jpg and others are used here */
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin: 15px 0;
+    display: block;
+}
+
+.project-link {
+    display: inline-block;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.project-link:hover {
+    text-decoration: underline;
+}
+
+/* ================== 7. FOOTER ================== */
+footer {
+    background-color: var(--text-color);
+    color: white;
+    padding: 20px 5%;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.social-links {
+    margin: 10px 0;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1.2em;
+    /* Use icon font or SVG for production icons (GitHub/Codecademy) */
