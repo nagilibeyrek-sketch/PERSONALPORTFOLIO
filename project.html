@@ -3,74 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Beyrek Naghili's Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Project 1: Breadboard Circuit Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            text-align: center;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ccc;
+            margin-bottom: 20px;
+        }
+        .circuit-section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        .circuit-section h2 {
+            color: #0056b3;
+            border-bottom: 1px dashed #e0e0e0;
+            padding-bottom: 5px;
+        }
+        .image-container {
+            text-align: center;
+            margin: 15px 0;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin: 10px;
+        }
+        ul {
+            list-style-type: square;
+            margin-left: 20px;
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar">
-        <a href="index.html" class="nav-brand">Beyrek Naghili's Portfolio</a>
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="projects.html">Projects</a>
+
+    <header>
+        <h1>🔬 Project 1: Basic Electronics Circuit</h1>
+        <p>Documentation for the breadboard circuit assembly.</p>
+    </header>
+
+    <div class="circuit-section">
+        <h2>Project 1: Circuit 1 (`project1_circuit_1.jpeg`)</h2>
+        <div class="image-container">
+            <img src="project1_circuit_1.jpeg" alt="Close-up view of the breadboard circuit, showing power supply and LED">
         </div>
-        <button class="menu-toggle" aria-expanded="false" aria-controls="nav-links">
-            ☰
-        </button>
-    </nav>
 
-    <main id="projects">
-        <h1>My Projects</h1>
+        <h3>Description</h3>
+        <ul>
+            <li>This image shows a close-up of the components used on the breadboard.</li>
+            <li>**Components visible:** Power supply module, Green LED, Resistors, Jumper wires.</li>
+            <li>The circuit likely demonstrates basic signal flow, perhaps a simple switch or an LED driving circuit.</li>
+        </ul>
+    </div>
 
-        <section class="project-item">
-            <h2>Project 1: Basic Electronic Circuit Build (SITE 1101)</h2>
-            
-            <p class="description">Bu proje, bir breadboard üzerinde temel bir elektronik devrenin pratik olarak kurulmasını içeriyordu. Mantık devreleri, dijital bileşenler ve fiziksel hesaplama kavramlarını pekiştiren bir SITE 1101 ders bileşeniydi.</p>
-            
-            <img src="assets/project1_circuit_2.jpg" alt="Devre 2: Breadboard üzerinde kablolar ve bir LED devresi" class="project-image">
-            
-            <img src="assets/project1_circuit_1.jpg" alt="Devre 1: Üstten çekilmiş daha küçük bir devre fotoğrafı" class="project-image detail-image">
-            
-            <p class="details">**Kullanılan Teknolojiler:** Breadboard, Jumper Kablolar, Dirençler, LED, Güç Kaynağı</p>
-            <a href="[Proje 1 Canlı Linki veya Deposu]" target="_blank" class="project-link">View Project Details</a>
-        </section>
+    <div class="circuit-section">
+        <h2>Project 1: Circuit 2 (`project1_circuit_2.jpeg`)</h2>
+        <div class="image-container">
+            <img src="project1_circuit_2.jpeg" alt="Full view of the breadboard circuit and setup">
+        </div>
 
-        <section class="project-item optional-project">
-            <h2>Project 2: Hour of Code (Optional)</h2>
-            <p class="description">Tamamlandıysa, bu bölüm Kodlama Saati'ne (Hour of Code) katılımımı detaylandırır. Bu etkinlik, temel programlama mantığına ve hesaplamalı düşünmeye başlangıç ​​yapmamı sağladı.</p>
-        </section>
-
-        <section class="project-item">
-            <h2>[Diğer Proje Başlığı]</h2>
-            
-            <p class="description">[Tamamladığınız diğer bir projenin başlığını, açıklamasını ve ayrıntılarını buraya ekleyin.]</p>
-            
-            <img src="assets/other-project-screenshot.png" alt="Diğer Projenin Ekran Görüntüsü" class="project-image">
-            
-            <p class="details">**Kullanılan Teknolojiler:** [Örn: Python, SQL, C++]</p>
-            <a href="[Diğer Projenin Canlı Linki veya Deposu]" target="_blank" class="project-link">View Project Details</a>
-        </section>
-    </main>
+        <h3>Description</h3>
+        <ul>
+            <li>This image provides a broader view of the entire setup, including the USB cable providing power.</li>
+            <li>The circuit is assembled on a standard breadboard using the power rails for voltage supply.</li>
+            <li>The yellow jumper wires connect the components (resistors, LED, and possibly an IC/Transistor) to complete the circuit path.</li>
+        </ul>
+    </div>
 
     <footer>
-        <div class="footer-content">
-            <p>&copy; 2025 Beyrek Naghili. All rights reserved.</p>
-
-            <div class="social-links">
-                <a href="https://github.com/nagilibeyrek-sketch" target="_blank" aria-label="GitHub Profile">
-                    <span class="icon">GitHub</span>
-                </a>
-                <a href="https://www.codecademy.com/profiles/bnaghili23930" target="_blank" aria-label="Codecademy Profile">
-                    <span class="icon">Codecademy</span>
-                </a>
-            </div>
-
-            <p class="repo-link">
-                View the code for this website on its <a href="https://github.com/nagilibeyrek-sketch/Personal-port-file" target="_blank">Public GitHub Repository</a>.
-            </p>
-        </div>
+        <p style="text-align: center; margin-top: 30px; font-size: 0.8em; color: #777;">Documentation created on December 2025.</p>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>
