@@ -1,25 +1,11 @@
-// Main JS for the portfolio site.
-// Keep this small. It handles mobile nav toggles and dynamic year insertion.
-document.addEventListener('DOMContentLoaded', function () {
-  // Toggle mobile navs: find all .nav-toggle buttons and connect to their nav via data-target
-  var toggles = document.querySelectorAll('.nav-toggle');
-  toggles.forEach(function (btn) {
-    var targetId = btn.getAttribute('data-target');
-    if (!targetId) return;
-    var nav = document.getElementById(targetId);
-    btn.addEventListener('click', function () {
-      var isOpen = nav.classList.toggle('open');
-      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    });
-  });
+console.log("Website Loaded Successfully!");
+const modal = document.getElementById('contactModal');
+const btn = document.getElementById('contactBtn');
+const closeBtn = document.getElementById('closeModal');
 
-  // Set current year in all footer year spans (IDs start with 'year')
-  var yearElements = document.querySelectorAll('[id^=year]');
-  var now = new Date().getFullYear();
-  yearElements.forEach(function (el) { el.textContent = now; });
-});
+btn.onclick = () => modal.style.display = "flex";
+closeBtn.onclick = () => modal.style.display = "none";
 
-/* Comments:
- - This script is intentionally minimal to keep the project accessible and beginner-friendly.
- - Add more functionality as you learn JS (e.g., form handling, lightboxes).
- */
+window.onclick = (e) => {
+  if (e.target == modal) modal.style.display = "none";
+};

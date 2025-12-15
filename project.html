@@ -2,68 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects — My Portfolio</title>
-    <link rel="stylesheet" href="Outline/home/style.css">
-    <meta name="description" content="Projects — Portfolio projects and showcases">
+    <title>Project 1 – Circuit</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            padding: 20px;
+        }
+        .project {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 800px;
+            margin: auto;
+        }
+        h1 {
+            text-align: center;
+        }
+        img {
+            width: 100%;
+            max-width: 350px;
+            margin: 10px 0;
+            border-radius: 6px;
+        }
+        .images {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        p {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="brand">MyPortfolio</a>
-            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-                <span class="hamburger"></span>
-            </button>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="projects.html">Projects</a></li>
-            </ul>
-        </div>
-    </nav>
 
-    <main>
-        <section class="section projects">
-            <div class="wrap">
-                <h2>Selected Projects</h2>
-                <p class="lead">A few projects that showcase my work — UI implementations, small apps, and prototypes.</p>
-                <div class="grid projects-grid">
-                    <article class="project-card">
-                        <div class="proj-thumb"><img class="project1" src="project1_circuit_1.jpg" alt="Project 1"></div>
-                        <h3>Project 1</h3>
-                        <p>Project 1 is a responsive web application showcasing modern front-end patterns and polished UI components. It emphasizes accessibility, performance, and a smooth, intuitive user experience.</p>
-                        <div class="card-actions"><a href="#" class="link">Live</a> · <a href="#" class="link">Code</a></div>
-                    </article>
-                </div>
-            </div>
-        </section>
-    </main>
+<div class="project">
+    <h1>Project 1: Breadboard Circuit</h1>
 
-    <footer class="site-footer">
-        <div class="wrap">
-            <div class="footer-left">© <span id="year"></span> Jane Doe</div>
-            <div class="footer-right"><a href="#" class="link">GitHub</a><a href="#" class="link">LinkedIn</a></div>
-        </div>
-    </footer>
+    <p>This project shows a simple breadboard circuit with LEDs, resistors, and jumper wires.</p>
 
-    <script>
-        (function(){
-            const btn = document.querySelector('.nav-toggle');
-            const links = document.querySelector('.nav-links');
-            btn.addEventListener('click', function(){
-                const expanded = btn.classList.toggle('open');
-                links.classList.toggle('open');
-                btn.setAttribute('aria-expanded', expanded);
-            });
-            links.addEventListener('click', function(e){
-                if(e.target.tagName === 'A'){
-                    links.classList.remove('open');
-                    btn.classList.remove('open');
-                    btn.setAttribute('aria-expanded', 'false');
-                }
-            });
-        })();
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+    <div class="images">
+        <img src="project1_circuit_1.jpg" alt="Circuit Image 1">
+        <img src="project1_circuit_2.jpg" alt="Circuit Image 2">
+    </div>
+</div>
+
 </body>
 </html>
