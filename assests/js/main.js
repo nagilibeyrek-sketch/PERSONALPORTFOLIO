@@ -1,49 +1,25 @@
-/*
- * SITE 1101 Personal Website Project
- * JavaScript: script.js
- * Focus: Mobile menu functionality for responsive design.
- */
-
-document.addEventListener('DOMContentLoaded', () => {
-    // -----------------------------------------------------
-    // Mobile Menu Toggle: Required for responsive navigation
-    // -----------------------------------------------------
-    
-    // NOTE: This JS assumes you add a button to your HTML navbar 
-    // for mobile users (e.g., a "hamburger" icon).
-    // Example HTML for the button (place inside <nav>): 
-    // <button class="menu-toggle" aria-expanded="false" aria-controls="nav-links">
-    //     ☰
-    // </button>
-
-    const navLinks = document.querySelector('.nav-links');
-    // Assuming you add a toggle button with the class 'menu-toggle'
-    const menuToggle = document.querySelector('.menu-toggle');
-
-    if (menuToggle && navLinks) {
-        menuToggle.addEventListener('click', () => {
-            // Toggles the 'active' class on the navigation links. 
-            // The CSS media query will show/hide the menu based on this class.
-            navLinks.classList.toggle('active');
-
-            // Accessibility update
-            const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
-            menuToggle.setAttribute('aria-expanded', !isExpanded);
-        });
-    }
-
-    // -----------------------------------------------------
-    // Optional: Add other dynamic features here
-    // -----------------------------------------------------
-    // Example: Highlight the current page link in the navbar
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    const navItems = document.querySelectorAll('.nav-links a');
-
-    navItems.forEach(item => {
-        const itemHref = item.getAttribute('href');
-        if (itemHref === currentPage) {
-            item.style.fontWeight = 'bold'; // Simple styling for current page
-            item.style.textDecoration = 'underline';
-        }
+// Main JS for the portfolio site.
+// Keep this small. It handles mobile nav toggles and dynamic year insertion.
+document.addEventListener('DOMContentLoaded', function () {
+  // Toggle mobile navs: find all .nav-toggle buttons and connect to their nav via data-target
+  var toggles = document.querySelectorAll('.nav-toggle');
+  toggles.forEach(function (btn) {
+    var targetId = btn.getAttribute('data-target');
+    if (!targetId) return;
+    var nav = document.getElementById(targetId);
+    btn.addEventListener('click', function () {
+      var isOpen = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
+  });
+
+  // Set current year in all footer year spans (IDs start with 'year')
+  var yearElements = document.querySelectorAll('[id^=year]');
+  var now = new Date().getFullYear();
+  yearElements.forEach(function (el) { el.textContent = now; });
 });
+
+/* Comments:
+ - This script is intentionally minimal to keep the project accessible and beginner-friendly.
+ - Add more functionality as you learn JS (e.g., form handling, lightboxes).
+ */

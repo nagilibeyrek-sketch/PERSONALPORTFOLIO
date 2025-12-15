@@ -1,163 +1,115 @@
-/* Bütün sayta tətbiq olunur */
-body {
-    background-color: #f4f4f4; /* Açıq boz arxa fon */
-    font-family: 'Helvetica Neue', Arial, sans-serif; /* Şrifti dəyişirik */
-    color: #333; /* Əsas yazı rəngi */
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
+/* Main stylesheet for student portfolio */
+/* Color palette and typography */
+:root {
+  --bg: #fff7f9; /* very light pink background */
+  --card: #ffffff;
+  --muted: #6b7280; /* muted gray */
+  --accent: #f472b6; /* soft pink */
+  --accent-2: #ff9ecf; /* lighter pink */
+  --accent-dark: #d9467a; /* darker pink for hover */
+  --text: #0f172a; /* near-black for contrast */
+  --radius: 12px;
+  --shadow-pink: rgba(244,114,182,0.08);
+} 
+
+/* Reset and base styles for the page */
+* { box-sizing: border-box; }
+html,body { height:100%; margin:0; font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:var(--bg); color:var(--text); }
+img { max-width:100%; display:block; }
+
+.container { max-width:1100px; margin:0 auto; padding:1rem; }
+
+/* Header / nav */
+.site-header { background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.8)); border-bottom:1px solid rgba(0,0,0,0.05); position:sticky; top:0; z-index:100; }
+.header-inner { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+.brand { font-weight:700; color:var(--text); text-decoration:none; font-size:1.1rem; }
+.site-nav ul { list-style:none; margin:0; padding:0; display:flex; gap:1rem; }
+.site-nav a { color:var(--text); text-decoration:none; padding:0.5rem 0.6rem; border-radius:8px; }
+.site-nav a:hover, .site-nav a:focus { background:rgba(244,114,182,0.08); }
+.site-nav a[aria-current] { font-weight:600; color:var(--accent-dark); }
+
+.nav-toggle { display:none; background:transparent; border:0; padding:0.5rem; cursor:pointer; }
+.hamburger { width:22px; height:2px; display:block; background:var(--text); position:relative; }
+.hamburger::before, .hamburger::after { content:''; width:22px; height:2px; background:var(--text); position:absolute; left:0; }
+.hamburger::before { top:-6px; }
+.hamburger::after { top:6px; }
+.sr-only { border:0; clip:rect(0 0 0 0); clip-path:inset(50%); height:1px; margin:-1px; overflow:hidden; padding:0; position:absolute; width:1px; }
+
+/* Hero */
+.hero { padding:3rem 0; }
+.hero-inner { display:grid; grid-template-columns: 280px 1fr; gap:2rem; align-items:center; }
+.profile-photo { width:100%; border-radius:12px; box-shadow:0 8px 20px var(--shadow-pink); border:1px solid rgba(244,114,182,0.04); }
+.intro h1 { margin:0 0 0.5rem 0; font-size:2rem; }
+.lead { margin:0; color:var(--muted); }
+.cta-row { margin-top:1rem; display:flex; gap:0.5rem; }
+.btn { background:var(--accent); color:white; padding:0.6rem 1rem; text-decoration:none; border-radius:8px; transition:background 160ms ease; }
+.btn:hover, .btn:focus { background:var(--accent-dark); }
+.btn-outline { background:transparent; color:var(--accent-dark); border:1px solid rgba(244,114,182,0.16); }
+.btn-outline:hover, .btn-outline:focus { background:rgba(244,114,182,0.06); }
+.repo-link { margin-top:0.75rem; color:var(--muted); font-size:0.9rem; }
+.repo-link a { color:var(--accent-dark); text-decoration:none; }
+.repo-link a:hover { color:var(--accent); text-decoration:underline; }
+
+/* Features */
+.features { display:grid; grid-template-columns: repeat(3, minmax(260px, 320px)); gap:1rem; margin:2rem 0; justify-content:center; }
+.feature { background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,247,250,0.6)); padding:1rem; border-radius:var(--radius); box-shadow: 0 8px 24px var(--shadow-pink); border:1px solid rgba(244,114,182,0.06); transition: transform 180ms ease, box-shadow 180ms ease; }
+.feature:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(244,114,182,0.12); }
+
+/* Projects */
+.projects-grid { display:grid; grid-template-columns: 1fr 1fr; gap:1rem; margin-top:1rem; }
+.project-card { background:var(--card); border-radius:var(--radius); overflow:hidden; display:flex; gap:1rem; box-shadow:0 8px 24px var(--shadow-pink); border:1px solid rgba(244,114,182,0.06); }
+.project-image { width:220px; height:140px; object-fit:cover; }
+
+/* Decorative project placeholder used instead of images */
+.project-placeholder {
+  width: 220px;
+  height: 140px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(255,247,250,1), rgba(255,236,245,1));
+  border: 1px solid rgba(244,114,182,0.06);
+  box-shadow: 0 6px 18px rgba(244,114,182,0.06);
+  flex-shrink: 0;
+}
+.project-body { padding:1rem; }
+.project-body h3 { margin:0 0 0.5rem 0; }
+.project-links a { color:var(--accent); text-decoration:none; }
+
+/* Resume */
+.resume-section { background:var(--card); padding:1rem; border-radius:var(--radius); margin-bottom:1rem; box-shadow: 0 2px 8px rgba(12,12,16,0.04); }
+
+/* Footer */
+.site-footer { border-top:1px solid rgba(0,0,0,0.06); background:#fff; padding:1rem 0; margin-top:2rem; }
+.footer-inner { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+.social a { margin-left:0.5rem; color:var(--muted); text-decoration:none; }
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 160px 1fr; }
+  .features { grid-template-columns: repeat(2, minmax(200px, 360px)); justify-content:center; }
+  .projects-grid { grid-template-columns: 1fr; }
 }
 
-/* Yuxarıdakı menyu (header) */
-header {
-    background-color: #007bff; /* Mavi rəng */
-    padding: 15px 0;
-    text-align: center;
+@media (max-width: 700px) {
+  .header-inner { gap:0.5rem; }
+  .nav-toggle { display:block; }
+  .site-nav { display:none; }
+  .site-nav.open { display:block; background:var(--card); position:absolute; left:0; right:0; top:64px; box-shadow:0 8px 24px rgba(12,12,16,0.06); }
+  .site-nav ul { flex-direction:column; padding:0.5rem; gap:0; }
+  .site-nav a { display:block; padding:0.75rem 1rem; }
+  .hero-inner { grid-template-columns: 1fr; text-align:center; }
+  .profile-photo { width:140px; margin:0 auto; }
+  .features { grid-template-columns: 1fr; justify-content:center; }
+  .project-placeholder { width:140px; height:100px; margin:0 auto; }
+  .project-image { width:140px; height:auto; margin:0 auto; }
 }
 
-/* Naviqasiya linkləri */
-header a {
-    color: white; /* Yazı rəngi ağ */
-    text-decoration: none; /* Alt xətti götürürük */
-    margin: 0 15px;
-    font-weight: bold;
-}
+/* small utilities */
+.container { padding-left:1rem; padding-right:1rem; }
 
-/* Başlıq rəngi */
-h1 {
-    color: #333; /* Tünd boz */
-}
+/* Add accessible focus states */
+a:focus { outline:3px solid rgba(244,114,182,0.18); outline-offset:2px; }
 
-/* Şəkil stili */
-img {
-    border: 5px solid #007bff; /* Şəkil ətrafına mavi çərçivə */
-    border-radius: 50%; /* Şəkli dairəvi edirik */
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    display: block;
-    margin: 20px auto;
-}
+/* Footer/social hover color */
+.social a:hover { color:var(--accent); }
 
-/* Footer stili */
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-/* --- İKONLAR VƏ LAYİHƏLƏR ÜÇÜN ƏLAVƏ STİLLƏR --- */
-
-/* Əlavə: Layihə təsvirlərini mərkəzə gətirmək üçün */
-.project-item {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-}
-
-/* Əlavə: İkonlar üçün konteyner */
-.social-icons {
-    text-align: center;
-    margin: 20px 0;
-}
-
-.social-icons a {
-    color: #007bff;
-    font-size: 24px;
-    margin: 0 15px;
-    text-decoration: none;
-    display: inline-block;
-}
-
-.social-icons span {
-    font-size: 16px;
-    font-weight: normal;
-    margin-left: 5px;
-}
-
-/* --- RESPONSIVE DESIGN (Media Queries) --- */
-
-@media (max-width: 600px) {
-    /* 1. Header və Naviqasiyanın Düzəldilməsi */
-    header {
-        padding: 10px 0;
-        text-align: center;
-    }
-
-    nav {
-        display: flex;
-        flex-direction: column; 
-        align-items: center;
-    }
-
-    nav a {
-        margin: 5px 0;
-        padding: 8px 15px;
-        width: 100%; 
-        box-sizing: border-box;
-    }
-
-    /* 2. Əsas Səhifə Məzmunu və Şəkillərin Düzəldilməsi */
-    main section {
-        padding: 20px;
-    }
-
-    h1 {
-        font-size: 2em; 
-    }
-
-    /* Şəkillərin Mobil Uyğunlaşdırılması */
-    main img {
-        max-width: 90%; 
-        height: auto;
-        margin: 20px auto;
-        display: block;
-    }
-
-    /* İkonları mərkəzə gətirmək */
-    .social-icons {
-        display: flex;
-        flex-direction: column; 
-        align-items: center;
-        gap: 10px; 
-    }
-
-    .social-icons a {
-        padding: 10px 0;
-        width: 80%; 
-        text-align: center;
-        border: 1px solid #ccc; 
-        border-radius: 5px;
-    }
-
-    /* Layihə Şəkillərini və Mətnini Mobilə Uyğunlaşdırmaq */
-    .project-item {
-        padding: 15px;
-    }
-
-    .project-images {
-        display: flex; /* Flexbox əlavə etdik */
-        flex-direction: column; 
-        align-items: center;
-    }
-
-    .project-images img {
-        width: 80%; 
-        margin: 10px 0;
-        border-radius: 5%; /* Dairəvi yox, azca yumruq olsun */
-    }
-
-    /* Footer-ın Düzəldilməsi */
-    footer {
-        position: static; /* Mobil telefonda footer-ı yuxarı çəkirik */
-        width: 100%;
-        padding: 15px 0;
-    }
-    footer p {
-        text-align: center;
-    }
-}
+/* Comments: This CSS contains the global layout and responsive adjustments. Replace variables for theme preferences. */
