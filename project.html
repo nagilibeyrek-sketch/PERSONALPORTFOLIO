@@ -3,85 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project 1: Breadboard Circuit Documentation</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f4f4f9;
-            color: #333;
-        }
-        header {
-            text-align: center;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #ccc;
-            margin-bottom: 20px;
-        }
-        .circuit-section {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
-        }
-        .circuit-section h2 {
-            color: #0056b3;
-            border-bottom: 1px dashed #e0e0e0;
-            padding-bottom: 5px;
-        }
-        .image-container {
-            text-align: center;
-            margin: 15px 0;
-        }
-        .image-container img {
-            max-width: 100%;
-            height: auto;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            margin: 10px;
-        }
-        ul {
-            list-style-type: square;
-            margin-left: 20px;
-        }
-    </style>
+    <title>Projects — My Portfolio</title>
+    <link rel="stylesheet" href="Outline/home/style.css">
+    <meta name="description" content="Projects — Portfolio projects and showcases">
 </head>
 <body>
-
-    <header>
-        <h1>🔬 Project 1: Basic Electronics Circuit</h1>
-        <p>Documentation for the breadboard circuit assembly.</p>
-    </header>
-
-    <div class="circuit-section">
-        <h2>Project 1: Circuit 1 (Full View)</h2>
-        <div class="image-container">
-            <img src="project1_circuit_1.jpg" alt="Full view of the breadboard circuit and setup">
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="brand">MyPortfolio</a>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="projects.html">Projects</a></li>
+            </ul>
         </div>
+    </nav>
 
-        <h3>Description</h3>
-        <ul>
-            <li>This image provides a broader view of the entire setup.</li>
-            <li>The circuit is assembled on a standard breadboard using a power supply module.</li>
-        </ul>
-    </div>
+    <main>
+        <section class="section projects">
+            <div class="wrap">
+                <h2>Selected Projects</h2>
+                <p class="lead">A few projects that showcase my work — UI implementations, small apps, and prototypes.</p>
+                <div class="grid projects-grid">
+                    <article class="project-card">
+                        <div class="proj-thumb"><img class="project1" src="project1_circuit_1.jpg" alt="Project 1"></div>
+                        <h3>Project 1</h3>
+                        <p>Project 1 is a responsive web application showcasing modern front-end patterns and polished UI components. It emphasizes accessibility, performance, and a smooth, intuitive user experience.</p>
+                        <div class="card-actions"><a href="#" class="link">Live</a> · <a href="#" class="link">Code</a></div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <div class="circuit-section">
-        <h2>Project 1: Circuit 2 (Close-up View)</h2>
-        <div class="image-container">
-            <img src="project1_circuit_2.jpg" alt="Close-up view of the breadboard circuit, showing power supply and LED">
+    <footer class="site-footer">
+        <div class="wrap">
+            <div class="footer-left">© <span id="year"></span> Jane Doe</div>
+            <div class="footer-right"><a href="#" class="link">GitHub</a><a href="#" class="link">LinkedIn</a></div>
         </div>
-
-        <h3>Description</h3>
-        <ul>
-            <li>This image shows a close-up of the components used on the breadboard.</li>
-            <li>**Components visible:** Power supply module, Green LED, Resistors, Jumper wires.</li>
-        </ul>
-    </div>
-
-    <footer>
-        <p style="text-align: center; margin-top: 30px; font-size: 0.8em; color: #777;">Documentation created on December 2025.</p>
     </footer>
 
+    <script>
+        (function(){
+            const btn = document.querySelector('.nav-toggle');
+            const links = document.querySelector('.nav-links');
+            btn.addEventListener('click', function(){
+                const expanded = btn.classList.toggle('open');
+                links.classList.toggle('open');
+                btn.setAttribute('aria-expanded', expanded);
+            });
+            links.addEventListener('click', function(e){
+                if(e.target.tagName === 'A'){
+                    links.classList.remove('open');
+                    btn.classList.remove('open');
+                    btn.setAttribute('aria-expanded', 'false');
+                }
+            });
+        })();
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
